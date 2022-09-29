@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Animated Radio Buttons </title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="radio_wrapper">
+
+    <h2>Choose your theme</h2>
+
+    <div class="radio_item active">
+      <label class="radio_label">
+        <input type="radio" class="input_radio" name="theme" checked>
+        <div class="radio_inner">
+          <div class="checkmark dark"></div>
+          <div class="info">
+            Dark
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <div class="radio_item ">
+      <label class="radio_label">
+        <input type="radio" class="input_radio" name="theme">
+        <div class="radio_inner">
+          <div class="checkmark light"></div>
+          <div class="info">
+            Light
+          </div>
+        </div>
+      </label>
+    </div>
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+$(".radio_label").click(function () {
+  if ($(this).find(".input_radio").prop("checked", true)) {
+    $(".radio_label").parent().removeClass("active");
+    $(this).parent().addClass("active");
+  }
+});
+</script>
+
+</body>
+</html>

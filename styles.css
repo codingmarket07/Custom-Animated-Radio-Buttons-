@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+:root {
+  --bg-clr: #72fdec;
+  --white: #fff;
+  --text-clr: #544548;
+  --dark-clr: #4bc4b5;
+  --light-clr: #caf8f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: var(--bg-clr);
+  font-size: 14px;
+  color: var(--text-clr);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.radio_wrapper {
+  background: var(--white);
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  letter-spacing: 2px;
+}
+
+.radio_wrapper h2,
+.radio_wrapper .radio_item {
+  margin-bottom: 15px;
+}
+
+.radio_wrapper .radio_item:last-child {
+  margin-bottom: 0;
+}
+
+.radio_wrapper .radio_item .radio_label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.radio_wrapper .radio_item .input_radio {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.radio_wrapper .radio_item .radio_inner {
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+}
+
+.radio_wrapper .radio_item .checkmark {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  background: var(--light-clr);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: top 0.4s ease;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.radio_wrapper .radio_item .checkmark.light {
+  background: var(--dark-clr);
+}
+
+.radio_wrapper .radio_item.active .checkmark.dark {
+  top: 31px;
+}
+
+.radio_wrapper .radio_item.active + .radio_item .checkmark.light {
+  top: -37px;
+}
